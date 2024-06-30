@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
         node.vm.network "forwarded_port", guest: 9300, host: (9300 + i + 10)
         
         # Configure VirtualBox specific settings
-        node.vm.provider "virtualbox" do |vb|
+        node.vm.provider "vmware_desktop" do |vb|
           vb.name = "master-node-#{i}"
           vb.memory = "512"
           vb.cpus = 2
@@ -45,7 +45,7 @@ Vagrant.configure("2") do |config|
         node.vm.network "forwarded_port", guest: 9300, host: (9400 + i + 30)
       
         # Configure VirtualBox specific settings
-        node.vm.provider "virtualbox" do |vb|
+        node.vm.provider "vmware_desktop" do |vb|
           vb.name = "data-node-#{i}"
           vb.memory = "512"
           vb.cpus = 2
